@@ -712,7 +712,7 @@ form button:hover{
 
 /* galaxy */
 
-@media only screen and (max-width:450px) {
+@media only screen and (max-width:550px) {
   /* nav */
   .nav{
     display: none;
