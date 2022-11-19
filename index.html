@@ -7,24 +7,12 @@
     <title>Dinh Le Hoan Assignment</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVollkorn:400,400italic,700,700italic%7CSource+Sans+Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic">
-    <script src="./index.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
-</head>
+    <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6347d38c37898912e96e65b4/1gf894nmv';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+</head>
+<script src="./index.js"></script>
+
 
 <body>
     <div class="nav">
@@ -192,7 +180,7 @@
         <h1 style="font-size:43px ; line-height: 45px;" >Mọi khách hàng <br>
             đều yêu chúng tôi</h1>
             <i style="font-size: 13px ;">Đến nỗi không lời để nói hết...</i>
-        <div class="content visible" style="margin-top: 60px ;"> <i>“I'm not a fan of this company at all, however i'm a whole air conditioner ”</i> 
+        <div class="content" style="margin-top: 60px ;"> <i>“I'm not a fan of this company at all, however i'm a whole air conditioner ”</i> 
             <br>
             A Smith - Hàng xóm
         </div>
@@ -214,18 +202,53 @@
             letter-spacing: -0.5px;">Sinh động, tinh tế, hiệu năng tốt, thu hút người xem, tư duy thiết kế thượng thừa, chi phí duy trì, bảo dưỡng, nâng cấp, thay thế, quản lí đều được miễn phí đối với khách hàng thân thiết.</p>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/1.jpg);">
+      <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="1000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>        
+              </div>
+            
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/2.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="2000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 
+              </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/3.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="3000"></input>
+                 <input type="image" class="btn btn2 " src="./img/cart/info.png"></input>
+                 
+              </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/4.jpg);">
-        </div>
-        <div class="creations_part" style="background-image: url(./img/creation/7.jpg);">
-        </div>
-        <div class="creations_part" style="background-image: url(./img/creation/6.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="4000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 
+              </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/5.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="5000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 
+              </div>
+        </div>
+        <div class="creations_part" style="background-image: url(./img/creation/6.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="6000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 
+              </div>
+        </div>
+        <div class="creations_part" style="background-image: url(./img/creation/7.jpg);">
+        <div class="hover_me">
+                 <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="7000"></input>
+                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 
+              </div>
         </div>
     </div>
     <div id="contact" class="contact">
@@ -268,5 +291,99 @@
             </div>
         </div>
     </div>
+    <div id="des_products_contain">
+        <div class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst" src="./img/creation/1.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/1.jpg" onclick="document.getElementById('imgFirst').src='./img/creation/1.jpg'" alt="">
+                    <input type="image" src="./img/creation/11.png" onclick="document.getElementById('imgFirst').src='./img/creation/11.png'" alt="">
+                    <input type="image" src="./img/creation/12.png" onclick="document.getElementById('imgFirst').src='./img/creation/12.png'" alt="">
+                    <input type="image" src="./img/creation/13.png" onclick="document.getElementById('imgFirst').src='./img/creation/13.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Nhìn về xa xăm</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: Robert Hoàn <br>
+                    " Tôi chỉ đơn giản là cố gắng ghi lại những khoảng khắc bất chợt trong chuyến hành trình của mình "<br>
+                    - ông phát biểu tại lễ trao thưởng. <br><br>
+                    Đây là tác phẩm đạt giải cao nhất tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="cart_contain">
+        <div  class="description_cart">
+            <span class="modal-close as-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div id="product_1" class="product_in_cart_IP">
+                <img src="./img/creation/1.jpg" alt="">
+                <h4>Nhìn về xa xăm - 1000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="1000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_2" class="product_in_cart_IP">
+                <img src="./img/creation/2.jpg" alt="">
+                <h4>Cô gái Galalin - 2000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="2000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_3" class="product_in_cart_IP">
+                <img src="./img/creation/3.jpg" alt="">
+                <h4>Thanh âm tôi- 3000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="3000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_4" class="product_in_cart_IP">
+                <img src="./img/creation/4.jpg" alt="">
+                <h4>Hanoi morning - 4000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="4000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_5" class="product_in_cart_IP">
+                <img src="./img/creation/5.jpg" alt="">
+                <h4>My house - 5000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="5000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_6" class="product_in_cart_IP">
+                <img src="./img/creation/6.jpg" alt="">
+                <h4>Hole in goal - 6000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="6000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div id="product_7" class="product_in_cart_IP">
+                <img src="./img/creation/7.jpg" alt="">
+                <h4>Chiều chiều - 7000$ - SL : </h4>
+                <button class="close-pro" onclick="remove_pro_out(this.value)" value="7000">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div  class="product_in_cart sum_cart">
+                <h3>
+                    TỔNG SỐ TIỀN : <br>$
+                    <Span id="tong">0</Span>
+                </h3>
+                
+            </div>
+        </div>
+    </div>
+    <div id="shop">
+        <img class="your_cart" src="./img/cart/bag.png" alt="">
+    </div>
 </body>
+
 </html>
