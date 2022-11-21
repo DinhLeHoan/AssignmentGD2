@@ -204,49 +204,49 @@
         <div class="creations_part" style="background-image: url(./img/creation/1.jpg);">
       <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="1000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>        
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="1"></input>        
               </div>
             
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/2.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="2000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="2"></input>
                  
               </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/3.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="3000"></input>
-                 <input type="image" class="btn btn2 " src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1 " src="./img/cart/info.png" onclick="appearInfor(this.value)" value="3"></input>
                  
               </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/4.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="4000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="4"></input>
                  
               </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/5.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="5000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="5"></input>
                  
               </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/6.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="6000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="6"></input>
                  
               </div>
         </div>
         <div class="creations_part" style="background-image: url(./img/creation/7.jpg);">
         <div class="hover_me">
                  <input type="image" class="btn" src="./img/cart/shopping-cart.png" onclick="buying(this.value)" value="7000"></input>
-                 <input type="image" class="btn btn2" src="./img/cart/info.png"></input>
+                 <input type="image" class="btn btn1" src="./img/cart/info.png" onclick="appearInfor(this.value)" value="7"></input>
                  
               </div>
         </div>
@@ -292,17 +292,17 @@
         </div>
     </div>
     <div id="des_products_contain">
-        <div class="description_pro">
+        <div id="ver_1" class="description_pro">
             <span class="modal-close js-modal-close">
                 <i class="ti-close"></i>
             </span>
             <div class="imgWrap">
-                <img id="imgFirst" src="./img/creation/1.jpg" alt="">
+                <img id="imgFirst_1" src="./img/creation/1.jpg" alt="">
                 <div class="imgWrapMini">
-                    <input type="image" src="./img/creation/1.jpg" onclick="document.getElementById('imgFirst').src='./img/creation/1.jpg'" alt="">
-                    <input type="image" src="./img/creation/11.png" onclick="document.getElementById('imgFirst').src='./img/creation/11.png'" alt="">
-                    <input type="image" src="./img/creation/12.png" onclick="document.getElementById('imgFirst').src='./img/creation/12.png'" alt="">
-                    <input type="image" src="./img/creation/13.png" onclick="document.getElementById('imgFirst').src='./img/creation/13.png'" alt="">
+                    <input type="image" src="./img/creation/1.jpg" onclick="document.getElementById('imgFirst_1').src='./img/creation/1.jpg'" alt="">
+                    <input type="image" src="./img/creation/11.png" onclick="document.getElementById('imgFirst_1').src='./img/creation/11.png'" alt="">
+                    <input type="image" src="./img/creation/12.png" onclick="document.getElementById('imgFirst_1').src='./img/creation/12.png'" alt="">
+                    <input type="image" src="./img/creation/13.png" onclick="document.getElementById('imgFirst_1').src='./img/creation/13.png'" alt="">
 
                 </div>
             </div>
@@ -316,6 +316,164 @@
                     Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
                 </p>
             </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="1000">Mua Ngay</button>
+            <button class="buy_in_description" onclick="buying(this.value)" value="1000">Mua Ngay</button>
+        </div>
+        <div id="ver_2" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_2" src="./img/creation/2.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/2.jpg" onclick="document.getElementById('imgFirst_2').src='./img/creation/2.jpg'" alt="">
+                    <input type="image" src="./img/creation/21.png" onclick="document.getElementById('imgFirst_2').src='./img/creation/21.png'" alt="">
+                    <input type="image" src="./img/creation/22.png" onclick="document.getElementById('imgFirst_2').src='./img/creation/22.png'" alt="">
+                    <input type="image" src="./img/creation/23.png" onclick="document.getElementById('imgFirst_2').src='./img/creation/23.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Cô gái Galalin</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: Hoàn Lee<br>
+                    " Một cô gái đáng yêu, hồn nhiên, trong trẻo, trong đôi mắt ấy tôi thấy cả bầu trời..."<br>
+                    - ông phát biểu tại lễ vinh danh. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="2000">Mua Ngay</button>
+        </div>
+        <div id="ver_3" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_3" src="./img/creation/3.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/3.jpg" onclick="document.getElementById('imgFirst_3').src='./img/creation/3.jpg'" alt="">
+                    <input type="image" src="./img/creation/31.png" onclick="document.getElementById('imgFirst_3').src='./img/creation/31.png'" alt="">
+                    <input type="image" src="./img/creation/32.png" onclick="document.getElementById('imgFirst_3').src='./img/creation/32.png'" alt="">
+                    <input type="image" src="./img/creation/33.png" onclick="document.getElementById('imgFirst_3').src='./img/creation/33.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Thanh âm tôi</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: lewandosky <br>
+                    " Từng thanh âm như cộng hưởng cùng màn đêm nặng trỉu, vỗ về, cỗ vũ và ôm ấp cái tôi trong tôi "<br>
+                    - ông phát biểu tại lễ vinh danh. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="3000">Mua Ngay</button>
+        </div>
+        <div id="ver_4" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_4" src="./img/creation/4.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/4.jpg" onclick="document.getElementById('imgFirst_4').src='./img/creation/4.jpg'" alt="">
+                    <input type="image" src="./img/creation/41.png" onclick="document.getElementById('imgFirst_4').src='./img/creation/41.png'" alt="">
+                    <input type="image" src="./img/creation/42.png" onclick="document.getElementById('imgFirst_4').src='./img/creation/42.png'" alt="">
+                    <input type="image" src="./img/creation/43.png" onclick="document.getElementById('imgFirst_4').src='./img/creation/43.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Hanoi morning</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: Hoàn onlyFan <br>
+                    " đó là một buổi sáng đẹp "<br>
+                    - ông cảm thán tại lễ trao thưởng. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="4000">Mua Ngay</button>
+        </div>
+        <div id="ver_5" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_5" src="./img/creation/5.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/5.jpg" onclick="document.getElementById('imgFirst_5').src='./img/creation/5.jpg'" alt="">
+                    <input type="image" src="./img/creation/51.png" onclick="document.getElementById('imgFirst_5').src='./img/creation/51.png'" alt="">
+                    <input type="image" src="./img/creation/52.png" onclick="document.getElementById('imgFirst_5').src='./img/creation/52.png'" alt="">
+                    <input type="image" src="./img/creation/53.png" onclick="document.getElementById('imgFirst_5').src='./img/creation/53.png'" alt="">
+
+                </div>
+            </div>
+            <h2>My house</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: LeeHoawn <br>
+                    " Nhà tôi sau khi dón nhận những cơn mưa đầu mùa, và những cơn nắng cháy da, vẫn sừng sửng như thế đấy, như tình yêu tôi dành cho em vậy Galila ơi!"<br>
+                    - ông cảm động nói tại lễ trao thưởng. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="5000">Mua Ngay</button>
+        </div>
+        <div id="ver_6" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_6" src="./img/creation/6.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/6.jpg" onclick="document.getElementById('imgFirst_6').src='./img/creation/6.jpg'" alt="">
+                    <input type="image" src="./img/creation/61.png" onclick="document.getElementById('imgFirst_6').src='./img/creation/61.png'" alt="">
+                    <input type="image" src="./img/creation/62.png" onclick="document.getElementById('imgFirst_6').src='./img/creation/62.png'" alt="">
+                    <input type="image" src="./img/creation/63.png" onclick="document.getElementById('imgFirst_6').src='./img/creation/63.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Hole in goal</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: Đinh Lê Hoàn <br>
+                    " Là một người theo chũ nghĩa stonicsm và hư vô, liệu cuộc sống này thật sự có ý nghĩa khi chúng ta có những mục tiêu ? "<br>
+                    - ông hỏi tại lễ trao thưởng. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="6000">Mua Ngay</button>
+        </div>
+        <div id="ver_7" class="description_pro">
+            <span class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </span>
+            <div class="imgWrap">
+                <img id="imgFirst_7" src="./img/creation/7.jpg" alt="">
+                <div class="imgWrapMini">
+                    <input type="image" src="./img/creation/7.jpg" onclick="document.getElementById('imgFirst_7').src='./img/creation/7.jpg'" alt="">
+                    <input type="image" src="./img/creation/71.png" onclick="document.getElementById('imgFirst_7').src='./img/creation/71.png'" alt="">
+                    <input type="image" src="./img/creation/72.png" onclick="document.getElementById('imgFirst_7').src='./img/creation/72.png'" alt="">
+                    <input type="image" src="./img/creation/73.png" onclick="document.getElementById('imgFirst_7').src='./img/creation/73.png'" alt="">
+
+                </div>
+            </div>
+            <h2>Chiều chiều</h2>
+            <div class="sale-pro">
+                
+                <p>Tác giả: Hoàn Poem<br>
+                    " Chiều chiều ra đứng ngõ sau, Những điều trông thấy mà đau đớn lòng "<br>
+                    - ông ngâm thơ tại lễ trao thưởng. <br><br>
+                    Đây là một trong những tác phẩm được triển lãm tại liên hoan nhiếp ảnh quốc tế, tổ chức tại Tokyo ngày 02/11 vừa qua <br>
+                    Tác phẩm hiện đang được bán đấu giá ngay tại đây, chỉ cần bạn click vào nút mua phía dưới, còn chần chờ gì để sở hữu bức ảnh nổi tiếng này.
+                </p>
+            </div>
+            <button class="buy_in_description" onclick="buying(this.value)" value="7000">Mua Ngay</button>
         </div>
     </div>
     <div id="cart_contain">
@@ -329,6 +487,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="1000">
                     <i class="ti-close"></i>
                 </button>
+                <button class="add_more_pro" onclick="buying(this.value)" value="1000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="1000">-</button>
             </div>
             <div id="product_2" class="product_in_cart_IP">
                 <img src="./img/creation/2.jpg" alt="">
@@ -336,6 +496,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="2000">
                     <i class="ti-close"></i>
                 </button>
+                <button class="add_more_pro" onclick="buying(this.value)" value="2000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="2000">-</button>
             </div>
             <div id="product_3" class="product_in_cart_IP">
                 <img src="./img/creation/3.jpg" alt="">
@@ -343,6 +505,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="3000">
                     <i class="ti-close"></i>
                 </button>
+                                <button class="add_more_pro" onclick="buying(this.value)" value="3000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="3000">-</button>
             </div>
             <div id="product_4" class="product_in_cart_IP">
                 <img src="./img/creation/4.jpg" alt="">
@@ -350,6 +514,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="4000">
                     <i class="ti-close"></i>
                 </button>
+                                <button class="add_more_pro" onclick="buying(this.value)" value="4000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="4000">-</button>
             </div>
             <div id="product_5" class="product_in_cart_IP">
                 <img src="./img/creation/5.jpg" alt="">
@@ -357,6 +523,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="5000">
                     <i class="ti-close"></i>
                 </button>
+                                <button class="add_more_pro" onclick="buying(this.value)" value="5000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="5000">-</button>
             </div>
             <div id="product_6" class="product_in_cart_IP">
                 <img src="./img/creation/6.jpg" alt="">
@@ -364,6 +532,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="6000">
                     <i class="ti-close"></i>
                 </button>
+                                <button class="add_more_pro" onclick="buying(this.value)" value="6000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="6000">-</button>
             </div>
             <div id="product_7" class="product_in_cart_IP">
                 <img src="./img/creation/7.jpg" alt="">
@@ -371,6 +541,8 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="7000">
                     <i class="ti-close"></i>
                 </button>
+                                <button class="add_more_pro" onclick="buying(this.value)" value="7000">+</button>
+                <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="7000">-</button>
             </div>
             <div  class="product_in_cart sum_cart">
                 <h3>
@@ -383,6 +555,7 @@
     </div>
     <div id="shop">
         <img class="your_cart" src="./img/cart/bag.png" alt="">
+        <span id="amount_in_your_cart">0</span>
     </div>
 </body>
 

@@ -413,7 +413,7 @@ html{
   top: 37%;
 }
 
-.btn2{
+.btn1{
   left: 55%;
   height: 90px;
   
@@ -534,7 +534,9 @@ form button:hover{
   
 }
 /* shop */
-
+#shop{
+  position: relative;
+}
 #shop img{
   position: fixed;
   right: 0;
@@ -549,7 +551,26 @@ form button:hover{
   animation-iteration-count: infinite;
 }
 
+#amount_in_your_cart{
+  position: fixed;
+  right: 0;
+  top:  580px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: rgb(218, 0, 0);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  line-height: 40px;
+  text-align: center;
+  z-index: 10;
+  display: none;
+}
 
+#amount_in_your_cart.displayBlock{
+  display: block;
+}
 /* infor of product */
 
 #des_products_contain{
@@ -572,6 +593,49 @@ form button:hover{
   display: flex;
 }
 
+.description_pro{
+  display: none;
+}
+
+#ver_1.hienRa{
+  display: block;
+}
+
+#ver_2.hienRa{
+  display: block;
+}
+#ver_3.hienRa{
+  display: block;
+}
+#ver_4.hienRa{
+  display: block;
+}
+#ver_5.hienRa{
+  display: block;
+}
+#ver_6.hienRa{
+  display: block;
+}
+#ver_7.hienRa{
+  display: block;
+}
+
+.buy_in_description{
+  position: absolute;
+  right: 22%;
+  bottom: 15%;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.buy_in_description:hover{
+  background-color: #000000;
+  color: #fff;
+}
 /* content of products */
 .description_pro{
   width: 1200px;
@@ -704,7 +768,55 @@ form button:hover{
   text-align: center;
 }
 
+.add_more_pro{
+  position: absolute;
+  bottom: 13%;
+  right: 30%;
+  width: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0);
+  color: #fff;
+  border-color: #fff;
+  cursor: pointer;
+  line-height: 25px;
+  display: none;
+}
 
+.product_in_cart_IP:hover .add_more_pro{
+  display: block;
+}
+
+.add_more_pro:hover{
+  /* color: #000; */
+  background-color: rgba(224, 224, 224, 0.3);
+}
+
+.minus_more_pro{
+  position: absolute;
+  bottom: 13%;
+  right: 50%;
+  width: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0);
+  color: #fff;
+  border-color: #fff;
+  cursor: pointer;
+  line-height: 25px;
+  display: none;
+}
+
+.product_in_cart_IP:hover .minus_more_pro{
+  display: block;
+}
+
+.minus_more_pro:hover{
+  /* color: #000; */
+  background-color: rgba(224, 224, 224, 0.3);
+}
+
+/*  */
 
 .sum_cart{
   display: block;
