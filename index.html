@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVollkorn:400,400italic,700,700italic%7CSource+Sans+Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic">
     <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
-    <link rel="stylesheet" href="./themify-icons.css">
+    <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">
 
 </head>
 <script src="./index.js"></script>
 
 
-<body>
+<body onload="checkCookie()">
     <div class="nav">
         <a href="">
             TRANG CHỦ
@@ -65,6 +65,12 @@
                 <div class="slider1 s3">
                     
                 </div>
+            </div>
+            <div id="index_slider">
+                <div class="index_slider1"></div>
+                <div class="index_slider2"></div>
+                <div class="index_slider3"></div>
+
             </div>
         </div>
 
@@ -254,14 +260,17 @@
     <div id="contact" class="contact">
         <h1  style="font-size:43px ; line-height: 45px; ">Lời bạn nhắn gửi</h1>
         <i style="font-size: 13px ;">Xin được nhận đôi lời nhắn nhủ</i>
-        <form action="hehe.html" method="get">
+        <form id="form_sent" onsubmit="return KiemTra()">
             <label style="font-weight:bold ;line-height:45PX ;" for="">TÊN BẠN LÀ</label><br>
-            <input required type="text" placeholder="Nơi nhập tên"><br>
+            <input name="ten" id="ten" type="text" placeholder="Nơi nhập tên"><br>
+            <span class="span_form">Xin hãy để lại quý danh</span>
             <label style="font-weight:bold ;line-height:45PX ;" for="">ĐỊA CHỈ EMAIL</label><br>
-            <input required type="text" placeholder="Nơi nhập gmail"><br>
+            <input id="gmail" name="gmail" type="text" placeholder="Nơi nhập gmail"><br>
+            <span class="span_form"></span>
             <label style="font-weight:bold ; line-height:45PX ;" for="">Ý KIẾN ĐÓNG GÓP</label><br>
-            <textarea required name="Mess" id="" cols="30" rows="2"></textarea><br>
-            <button type="submit">GỬI</button>
+            <textarea name="mess" id="mess" cols="30" rows="2"></textarea><br>
+            <span class="span_form">Tâm tư chưa được viết ra</span>
+            <input name="submit" id="Send" type="submit" value="Gửi"></input>
         </form>
     </div>
     
@@ -541,13 +550,14 @@
                 <button class="close-pro" onclick="remove_pro_out(this.value)" value="7000">
                     <i class="ti-close"></i>
                 </button>
-                                <button class="add_more_pro" onclick="buying(this.value)" value="7000">+</button>
+                <button class="add_more_pro" onclick="buying(this.value)" value="7000">+</button>
                 <button class="minus_more_pro" onclick="minus_more_pro(this.value)" value="7000">-</button>
             </div>
             <div  class="product_in_cart sum_cart">
                 <h3>
                     TỔNG SỐ TIỀN : <br>$
-                    <Span id="tong">0</Span>
+                    <Span id="tong">0</Span><br>
+                    <button id="pay_now" onclick="payment()">Thanh toán</button>
                 </h3>
                 
             </div>
@@ -556,6 +566,47 @@
     <div id="shop">
         <img class="your_cart" src="./img/cart/bag.png" alt="">
         <span id="amount_in_your_cart">0</span>
+    </div>
+    <div id="succes_sent">
+        <div class="succes_sent_class"><img src="./img/succes/succes_sent.gif" alt=""></div>
+    </div>
+    <div id="clock">
+        <div id="clock_count"></div>
+        <div class="tilte_of_sale">Giảm 50% tổng đơn hàng</div>
+    </div>
+    <div id="payment">
+        <div class="payment_cart">
+            <span class="modal-close pays-modal-close" onclick="close_payment()">
+                <i class="ti-close"></i>
+            </span>
+            <div class="payment_title">THANH TOÁN</div>
+            <div id="form_payment_contain">
+                <form action="" id="form_payment" onsubmit="return check_payment()">
+                    <label for="">TÊN BẠN LÀ</label><br>
+                    <input name="form_payment_name" id="form_payment_name" type="text" placeholder="Nơi nhập tên"><br>
+                    <span class="span_form span_form_payment">Nhập tên</span>
+
+
+                    <label for="">EMAIL</label><br>
+                    <input id="form_payment_gmail" name="gmail" type="text" placeholder="Nơi nhập gmail"><br>
+                    <span class="span_form span_form_payment"></span>
+
+                    <label for="">ĐỊA CHỈ</label><br>
+                    <input id="form_payment_address" name="address" type="text" placeholder="Nơi nhập địa chỉ"><br>
+                    <span class="span_form span_form_payment"></span>
+
+                    <label for="">SỐ ĐIỆN THOẠI</label><br>
+                    <input id="form_payment_phone" name="phone" type="number" placeholder="Nơi nhập số điện thoại"><br>
+                    <span class="span_form span_form_payment" style="margin-left: 310px;"></span>
+
+                    <h3 style="float: left ; margin-left:28px;margin-top:30px ;">
+                        TỔNG SỐ TIỀN : 
+                        <Span id="pay_sum">0</Span>$<br>
+                    </h3>
+                    <input name="submit" id="form_payment_button" type="submit" value="THANH TOÁN"></input>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
