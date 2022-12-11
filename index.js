@@ -8,7 +8,22 @@ window.addEventListener("load",function(){
     var slidersLength = sliderItems.length;
     
     let positionX = 0;
-    let index = 0;
+    let index = 1;
+
+    function index_slider(index){
+      document.getElementsByClassName("index_slider1")[0].style.backgroundColor ='rgba(255, 255, 255, 0.3)';
+      document.getElementsByClassName("index_slider2")[0].style.backgroundColor ='rgba(255, 255, 255, 0.3)';
+      document.getElementsByClassName("index_slider3")[0].style.backgroundColor ='rgba(255, 255, 255, 0.3)';
+      
+      document.getElementsByClassName("index_slider"+index)[0].style.backgroundColor ='#fff';
+
+    }
+
+    var click_index1 = document.getElementsByClassName("index_slider1")[0];
+    var click_index2 = document.getElementsByClassName("index_slider2")[0];
+    var click_index3 = document.getElementsByClassName("index_slider3")[0];
+
+    
 
     nextBtn.addEventListener("click",function(){
         changeSlide(1);
@@ -17,12 +32,12 @@ window.addEventListener("load",function(){
     preBtn.addEventListener("click",function(){
         changeSlide(-1);
     })
-
+    index_slider(index);
     function changeSlide(direction){
         if(direction == 1){
-            index++;
-            if(index == 1){toggleVisibility('slogan2')}
-            else if(index == 2){toggleVisibility('slogan3')}
+            
+            if(index == 2){toggleVisibility('slogan2')}
+            else if(index == 3){toggleVisibility('slogan3')}
             else{toggleVisibility('slogan1')};
             if(index >= slidersLength){
                 console.log(positionX);
@@ -30,38 +45,73 @@ window.addEventListener("load",function(){
                 console.log(positionX);
                 sliderMain.style = `transform: translateX(${positionX}px)`;
                 positionX =0;
-                index=0;
+                index=1;
             }
             else{
                 console.log(positionX);
                 positionX -= sliderItemWidth;
                 console.log(positionX);
                 sliderMain.style = `transform: translateX(${positionX}px)`;
+                index++;
             }
-            
+            index_slider(index)
             console.log("next slide")
           
         }else if(direction == - 1)
         {   
-            index--;
-            if(index == 1){toggleVisibility('slogan2')}
-            else if(index == 2){toggleVisibility('slogan3')}
+            if(index == 2){toggleVisibility('slogan2')}
+            else if(index == 3){toggleVisibility('slogan3')}
             else{toggleVisibility('slogan1')};
-            if(index < 0){
+            if(index < 2){
                 positionX -=  2*sliderItemWidth;
                 sliderMain.style = `transform: translateX(${positionX}px)`;
-                index = 2;
+                index = 3;
             }
             else{
                 positionX += sliderItemWidth;
                 sliderMain.style = `transform: translateX(${positionX}px)`;
+                index--;
+
             }
             
-           
+            index_slider(index);
             console.log("prev slide")
         }
+       
+        click_index1.addEventListener("click",function(){
+          
+          if(index==2){
+            changeSlide(-1);
+          }
+          if(index==3){
+            changeSlide(1);
+          }
+      })
+      click_index2.addEventListener("click",function(){
+          
+        if(index==1){
+          changeSlide(1);
+          
+        }
+        if(index==3){
+          changeSlide(1);
+          changeSlide(1);
+
+        }
+    }) 
+    click_index3.addEventListener("click",function(){
+          
+      if(index==2){
+        changeSlide(1);
+      }
+      if(index==1){
+        changeSlide(-1);
+      }
+  })
+
     }
 
+    
 
 // change text
 
@@ -89,15 +139,29 @@ function hideNonVisibleDivs() {
 }
 
 // maintain...........
-setInterval(toggle, 2000);
 
-function toggle() {
-  var quote = document.getElementsByClassName("content");
-      quote[0].classList.add("visible");
-      // setTimeout(quote[0].classList.remove("visible"),1900);
-      // setTimeout(40,quote[1].classList.add("visible"))
-      // setTimeout(1000,quote[1].classList.remove("visible"))
-}
+
+
+  var quotes = document.getElementsByClassName("content");
+  function quotes_hay(){
+
+          quotes[0].classList.toggle("visible")
+        setTimeout(() => {
+          quotes[0].classList.toggle("visible")
+          
+          }, 2000);
+        setTimeout(() => {
+          quotes[1].classList.toggle("visible")
+            
+          }, 2000);
+          setTimeout(() => {
+            quotes[1].classList.toggle("visible")
+              
+            }, 4000);
+    
+  }
+  quotes_hay();
+  setInterval(quotes_hay,4000)
 //''''''''''''''''''''
 
 // shoping
@@ -160,8 +224,13 @@ var product_1_amount = 0,
     product_all_amount = 0;
 
 
+
+
+
 function print_pay(sumMoney){
   document.getElementById("tong").innerHTML = sumMoney/1;
+  document.getElementById("pay_sum").innerHTML = sumMoney/1;
+
 }
 
 function buying(price){
@@ -202,6 +271,7 @@ function buying(price){
     product_1_amount++;
     print_pay(sumMoney);
     price_text_1.innerHTML ="Nhìn về xa xăm - 1000$ - SL : " +product_1_amount;
+    setCookie("product_1_amount_C", product_1_amount, 1);
   }
   else if(price==2000){
     sum_your_money(price)
@@ -209,6 +279,7 @@ function buying(price){
     product_2_amount++;
     print_pay(sumMoney);
     price_text_2.innerHTML ="Cô gái Galalin - 2000$ - SL : " +product_2_amount;
+    setCookie("product_2_amount_C", product_2_amount, 1);
     
   }
   else if(price==3000){
@@ -217,6 +288,7 @@ function buying(price){
     product_3_amount++;
     print_pay(sumMoney);
     price_text_3.innerHTML ="Thanh âm tôi - 3000$ - SL : " +product_3_amount;
+    setCookie("product_3_amount_C", product_3_amount, 1);
     
   }
   else if(price==4000){
@@ -225,6 +297,7 @@ function buying(price){
     product_4_amount++;
     print_pay(sumMoney);
     price_text_4.innerHTML ="Hanoi morning - 4000$ - SL : " +product_4_amount;
+    setCookie("product_4_amount_C", product_4_amount, 1);
     
   }
   else if(price==5000){
@@ -233,6 +306,8 @@ function buying(price){
     product_5_amount++;
     print_pay(sumMoney);
     price_text_5.innerHTML ="My house - 5000$ - SL : " +product_5_amount;
+    setCookie("product_5_amount_C", product_5_amount, 1);
+  
   }
   else if(price==6000){
     sum_your_money(price)
@@ -240,6 +315,8 @@ function buying(price){
     product_6_amount++;
     print_pay(sumMoney);
     price_text_6.innerHTML ="Hole in goal - 6000$ - SL : " +product_6_amount;
+    setCookie("product_6_amount_C", product_6_amount, 1);
+  
   }
   else if(price==7000){
     sum_your_money(price)
@@ -247,6 +324,8 @@ function buying(price){
     product_7_amount++;
     print_pay(sumMoney);
     price_text_7.innerHTML ="Chiều chiều - 7000$ - SL : " +product_7_amount;
+    setCookie("product_7_amount_C", product_7_amount, 1);
+  
   }
 
 }
@@ -277,6 +356,8 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_1_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_1_amount = 0; 
+    setCookie("product_1_amount_C", product_1_amount, 1);
+
   }
   else if(price==2000){
     removeProInCart(pro2);
@@ -284,6 +365,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_2_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_2_amount = 0; 
+    setCookie("product_2_amount_C", product_2_amount, 1);
 
   }
   else if(price==3000){
@@ -292,6 +374,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_3_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_3_amount = 0; 
+    setCookie("product_3_amount_C", product_3_amount, 1);
 
   }
   else if(price==4000){
@@ -300,6 +383,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_4_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_4_amount = 0; 
+    setCookie("product_4_amount_C", product_4_amount, 1);
 
   }
   else if(price==5000){
@@ -308,6 +392,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_5_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_5_amount = 0; 
+    setCookie("product_5_amount_C", product_5_amount, 1);
 
   }
   else if(price==6000){
@@ -316,6 +401,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_6_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_6_amount = 0; 
+    setCookie("product_6_amount_C", product_6_amount, 1);
 
   }
   else if(price==7000){
@@ -324,6 +410,7 @@ function minus_your_money(price){
     product_all_amount = product_all_amount - product_7_amount;
     number_above_cart.innerHTML = product_all_amount;
     product_7_amount = 0; 
+    setCookie("product_7_amount_C", product_7_amount, 1);
 
   }
 
@@ -438,6 +525,8 @@ function minus_more_pro(price){
       removeProInCart(pro1)
     }
     price_text_1.innerHTML ="Nhìn về xa xăm - 1000$ - SL : " +product_1_amount;
+    setCookie("product_1_amount_C", product_1_amount, 1);
+  
   }
   else if(price==2000){
     minus_your_money(price);
@@ -449,6 +538,8 @@ function minus_more_pro(price){
       removeProInCart(pro2)
     }
     price_text_2.innerHTML ="Cô gái Galalin - 2000$ - SL : " +product_2_amount;
+    setCookie("product_2_amount_C", product_2_amount, 1);
+  
   }
   else if(price==3000){
     minus_your_money(price);
@@ -460,6 +551,8 @@ function minus_more_pro(price){
       removeProInCart(pro3)
     }
     price_text_3.innerHTML ="Thanh âm tôi - 3000$ - SL : " +product_3_amount;
+    setCookie("product_3_amount_C", product_3_amount, 1);
+  
   }
   else if(price==4000){
     minus_your_money(price);
@@ -471,6 +564,8 @@ function minus_more_pro(price){
       removeProInCart(pro4)
     }
     price_text_4.innerHTML ="Hanoi morning - 4000$ - SL : " +product_4_amount;
+    setCookie("product_4_amount_C", product_4_amount, 1);
+  
   }
   else if(price==5000){
     minus_your_money(price);
@@ -481,7 +576,9 @@ function minus_more_pro(price){
     if(product_5_amount == 0){
       removeProInCart(pro5)
     }
-    price_text_6.innerHTML ="My house - 5000$ - SL : " +product_5_amount;
+    price_text_5.innerHTML ="My house - 5000$ - SL : " +product_5_amount;
+    setCookie("product_5_amount_C", product_5_amount, 1);
+  
   }
   else if(price==6000){
     minus_your_money(price);
@@ -493,6 +590,8 @@ function minus_more_pro(price){
       removeProInCart(pro6)
     }
     price_text_6.innerHTML ="Hole in goal - 6000$ - SL : " +product_6_amount;
+    setCookie("product_6_amount_C", product_6_amount, 1);
+  
   }
   else if(price==7000){
     minus_your_money(price);
@@ -505,4 +604,248 @@ function minus_more_pro(price){
     }
     price_text_7.innerHTML ="Chiều chiều - 7000$ - SL : " +product_7_amount;
   }
+  setCookie("product_7_amount_C", product_7_amount, 1);
+
+}
+
+function hide_error(){
+  document.getElementsByClassName("span_form")[0].style.display = 'none';
+  document.getElementsByClassName("span_form")[1].style.display = 'none';
+  document.getElementsByClassName("span_form")[2].style.display = 'none';
+
+}
+
+  function KiemTra(){
+
+        var ten = document.getElementById('ten');
+        if(ten.value == ""){
+          hide_error()
+          document.getElementsByClassName("span_form")[0].style.display = 'block';
+          ten.focus();
+          return false;
+        }
+
+        var gmail = document.getElementById('gmail')
+        if(gmail.value ==""){
+          hide_error()
+          document.getElementsByClassName("span_form")[1].style.display = 'block';
+          document.getElementsByClassName("span_form")[1].innerHTML = 'Mail không được bỏ trống';
+          gmail.focus();
+          return false;
+
+        }
+        var email_patterm = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!gmail.value.match(email_patterm)){
+          hide_error()
+          document.getElementsByClassName("span_form")[1].style.display = 'block';
+          document.getElementsByClassName("span_form")[1].style.width = '400px';
+          document.getElementsByClassName("span_form")[1].innerHTML = 'Mail đã nhập nhưng sai định dạng email.'
+          gmail.focus();
+          return false;
+        }
+
+        var mess = document.getElementById('mess')
+        // console.log(mess.value);
+        if(mess.value == ""){
+          hide_error()
+          document.getElementsByClassName("span_form")[2].style.display = 'block';
+          mess.focus();
+          return false;
+
+        }
+
+        
+        document.getElementById("succes_sent").style.display = "block";
+       
+        return true;
+  }
+
+
+
+  var countDownDate = new Date();
+	countDownDate.setMinutes(countDownDate.getMinutes() + 1);
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("clock_count").innerHTML =  seconds + " Giây";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("clock_count").innerHTML = "Hết hạn";
+    document.getElementById("clock_count").style.animation ="none";
+    document.getElementById("clock_count").style.fontSize = '15px';
+    document.getElementsByClassName("tilte_of_sale")[0].style.display ="none";
+    print_pay(sumMoney)
+    console.log(sumMoney);
+  }
+  if(distance > 0){
+    print_pay(sumMoney/2)
+  }
+}, 1000);
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+function getCookie(cname) {
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i = 0; i <ca.length; i++) {
+  var c = ca[i];
+  while (c.charAt(0)==' ') {
+      c = c.substring(1);
+  }
+  if (c.indexOf(name) == 0) {
+      return c.substring(name.length,c.length);
+  }
+}
+return "";
+}
+
+
+function checkCookie() {
+  var username=getCookie("username");
+  var product_1_amount_C = getCookie("product_1_amount_C")
+  var product_2_amount_C = getCookie("product_2_amount_C")
+  var product_3_amount_C = getCookie("product_3_amount_C")
+  var product_4_amount_C = getCookie("product_4_amount_C")
+  var product_5_amount_C = getCookie("product_5_amount_C")
+  var product_6_amount_C = getCookie("product_6_amount_C")
+  var product_7_amount_C = getCookie("product_7_amount_C")
+
+  if (username!="") {
+    // alert("Tôi nhớ bạn rồi " + username+" à, cookie này tồn tại trong 1 ngày");
+  } else {
+    username = prompt("Xin chào bạn đã xâm nhập vào web tôi, xin để lại quý danh:", "Nhập tên");
+    alert("reload trang để thấy điều kì diệu.")
+    if (username != "" && username != null) {
+        setCookie("username", username, 1);
+    }
+  }
+  
+  if(product_1_amount_C!=0){
+    for(let i = 0; i< product_1_amount_C;i++){
+      buying(1000);
+    }
+  }
+  if(product_2_amount_C!=0){
+    for(let i = 0; i< product_2_amount_C;i++){
+      buying(2000);
+    }
+  }
+  if(product_3_amount_C!=0){
+    for(let i = 0; i< product_3_amount_C;i++){
+      buying(3000);
+    }
+  } if(product_4_amount_C!=0){
+    for(let i = 0; i< product_4_amount_C;i++){
+      buying(4000);
+    }
+  } if(product_5_amount_C!=0){
+    for(let i = 0; i< product_5_amount_C;i++){
+      buying(5000);
+    }
+  }
+  if(product_6_amount_C!=0){
+    for(let i = 0; i< product_6_amount_C;i++){
+      buying(6000);
+    }
+  }
+  if(product_7_amount_C!=0){
+    for(let i = 0; i< product_7_amount_C;i++){
+      buying(7000);
+    }
+  }
+}
+
+function close_payment()
+ { document.getElementById("payment").classList.remove("appearent");
+}
+
+function payment(){
+  // var payContain = document.getElementById("payment_cart");
+  document.getElementById("payment").classList.add("appearent");
+  document.getElementById("cart_contain").classList.remove("appearent");
+
+}
+
+function hidePay(){
+  document.getElementsByClassName("span_form_payment")[0].style.display = 'none';
+  document.getElementsByClassName("span_form_payment")[1].style.display = 'none';
+  document.getElementsByClassName("span_form_payment")[2].style.display = 'none';
+  document.getElementsByClassName("span_form_payment")[3].style.display = 'none';
+
+
+}
+
+function check_payment(){
+
+  let name_pay = document.getElementById("form_payment_name");
+
+  if(name_pay.value ==""){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[0].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[0].style.width = '150px';
+    name_pay.focus();
+    return false;
+  }
+  let gmail_pay = document.getElementById("form_payment_gmail");
+  if(gmail_pay.value ==""){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[1].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[1].style.width = '150px';
+    document.getElementsByClassName("span_form_payment")[1].innerHTML = 'Nhập gmail';
+    gmail_pay.focus();
+    
+    return false;
+  }
+  var email_patterm = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if(!gmail_pay.value.match(email_patterm)){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[1].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[1].style.width = '190px';
+    document.getElementsByClassName("span_form_payment")[1].innerHTML = 'Sai định dạng mail';
+    gmail_pay.focus();
+    return false;
+  }
+  let address_pay = document.getElementById("form_payment_address");
+  if(address_pay.value ==""){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[2].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[2].style.width = '150px';
+    document.getElementsByClassName("span_form_payment")[2].innerHTML = 'Nhập địa chỉ';
+    address_pay.focus();
+    
+    return false;
+  }
+  let phone_pay = document.getElementById("form_payment_phone");
+  if(phone_pay.value ==""){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[3].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[3].style.width = '200px';
+    document.getElementsByClassName("span_form_payment")[3].innerHTML = 'Nhập số điện thoại';
+    phone_pay.focus();
+    
+    return false;
+  }
+  if(phone_pay.value.length >12|phone_pay.value.length <10){
+    hidePay();
+    document.getElementsByClassName("span_form_payment")[3].style.display = 'block';
+    document.getElementsByClassName("span_form_payment")[3].style.width = '200px';
+    document.getElementsByClassName("span_form_payment")[3].innerHTML = 'Sai định dạng số đt';
+    phone_pay.focus();
+    
+    return false;
+  }
+  setCookie("product_1_amount_C", 0, 1);
+  setCookie("product_2_amount_C", 0, 1);
+  setCookie("product_3_amount_C", 0, 1);
+  setCookie("product_4_amount_C", 0, 1);
+  setCookie("product_5_amount_C", 0, 1);
+  setCookie("product_6_amount_C", 0, 1);
+  setCookie("product_7_amount_C", 0, 1);
+
 }
