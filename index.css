@@ -126,6 +126,8 @@ html{
   display: flex;
   position: relative;
   transition: 0.35s ease; 
+    animation: modalFadeIn ease 0.6s;
+
 }
 /* slider title */
 .title{
@@ -456,15 +458,18 @@ textarea{
   color: #5c5c5c;
 }
 
-form button{
+#Send{
   margin-top: 20px;
   width: 100px;
   height: 50px;
   background-color:  transparent;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0;
 }
 
-form button:hover{
+#Send:hover{
   border-color: #878787;
   background-color: #878787;
   color: white;
@@ -781,6 +786,7 @@ form button:hover{
   cursor: pointer;
   line-height: 25px;
   display: none;
+  border-radius: 5px;
 }
 
 .product_in_cart_IP:hover .add_more_pro{
@@ -805,6 +811,8 @@ form button:hover{
   cursor: pointer;
   line-height: 25px;
   display: none;
+  border-radius: 5px;
+
 }
 
 .product_in_cart_IP:hover .minus_more_pro{
@@ -880,6 +888,205 @@ form button:hover{
 .close-pro:hover{
   color: #000;
   background-color: rgb(255, 255, 255);
+}
+
+/* Span form */
+
+.span_form{
+  position: absolute;
+  left: 10%;
+  color: red;
+  width: 250px;
+  border: 1px #000 solid;
+  height: 30px;
+  line-height: 30px;
+  animation: shake 0.5s;
+  display: none;
+}
+
+#succes_sent{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 800px;
+  height: 500px;
+  display: none;
+}
+
+.succes_sent_class img{
+  width: 70%;
+  height: 70%;
+  background-color:rgba(98, 98, 98, 0.3);
+  text-align: center;
+  margin-left: 60%;
+  margin-top: 10%;
+}
+
+/* sale now */
+
+
+#clock{
+font-size: 25px;
+width: 130px;
+height: 100px;
+font-weight: bold;
+position: fixed;
+z-index: 11;
+top: 5px;
+left: 90%;
+}
+.tilte_of_sale{
+  background-color: rgb(255, 255, 255);
+width:130px;
+height: 100px;
+color: rgb(255, 0, 0);
+-webkit-text-stroke: 1px rgb(255, 0, 0);
+border: 2px #000 solid;
+/* padding-top: 10px; */
+text-align: center;
+animation: shake 0.5s;
+animation-iteration-count: infinite;
+font-size: 25px;
+border-radius: 10%;    
+}
+
+#clock_count {
+text-align: center;
+margin-top: 0px;
+color: rgb(255, 255, 255);
+line-height: 50px;
+border-radius: 10%;
+width: 120px;
+background-color: rgb(0, 0, 0);
+border: 1px #000 solid;
+margin: 0 auto;
+animation: shake 1.3s;
+animation-iteration-count: infinite;
+}
+/* payment */
+#payment{
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn ease 0.6s;
+  align-items: center;
+  justify-content: center;
+  display: none;
+
+  /* display: flex; */
+}
+
+.pays-modal-close{
+  color: #ffffff;
+}
+
+#payment.appearent{
+    display: flex;
+}
+  
+.payment_cart{
+    width: 600px;
+    height: 650px;
+    background-color: #fff;
+    position: relative;
+    animation: modalFadeIn ease 0.6s;
+
+    
+}
+
+#pay_now{
+  position: absolute;
+  top: 140%;
+
+  width: 150px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+#pay_now:hover{
+  background-color: #000000;
+  color: #fff;
+}
+
+.payment_title{
+  width: 100%;
+  height: 100px;
+  background-color: #242424;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+#form_payment_contain{
+  text-align: center;
+}
+
+#form_payment{
+  margin-top: 10px;
+}
+
+#form_payment label{
+  font-weight: bold;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+#form_payment h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+#form_payment_button{
+  display: inline-block;
+  margin-top: 15px;
+  border: 2px solid black;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  font-weight: bold;
+}
+
+#form_payment_button:hover {
+  border-color: #878787;
+  background-color: #878787;
+  color: white;
+}
+
+/* index slider */
+#index_slider{
+  position: absolute;
+  bottom: 30px;
+  margin-left: 43%;
+  margin-top: 30px;
+  z-index: 11;
+}
+
+.index_slider1,.index_slider2,.index_slider3{
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  float: left;
+  border-radius: 50%;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.index_slider1:hover,.index_slider2:hover,.index_slider3:hover{
+  background-color: rgba(255, 255, 255, 0.3);
 }
 /* large */
 
@@ -1108,7 +1315,7 @@ form button:hover{
   }
 }
 /* tablet */
-@media only screen and (max-width:1277px) {
+@media only screen and (max-width:1290px) {
   .nav{
     width: 60%;
   }
@@ -1218,6 +1425,22 @@ form button:hover{
 
   .footer_part{
     width: 4%;
+  }
+  #amount_in_your_cart{
+    position: fixed;
+    right: 0;
+    top:  815px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: rgb(218, 0, 0);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    line-height: 40px;
+    text-align: center;
+    z-index: 10;
+    display: none;
   }
 }
 /* Iphone */
