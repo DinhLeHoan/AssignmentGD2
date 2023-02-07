@@ -706,7 +706,6 @@ return "";
 
 
 function checkCookie() {
-  var username=getCookie("username");
   var product_1_amount_C = getCookie("product_1_amount_C")
   var product_2_amount_C = getCookie("product_2_amount_C")
   var product_3_amount_C = getCookie("product_3_amount_C")
@@ -714,16 +713,6 @@ function checkCookie() {
   var product_5_amount_C = getCookie("product_5_amount_C")
   var product_6_amount_C = getCookie("product_6_amount_C")
   var product_7_amount_C = getCookie("product_7_amount_C")
-
-  if (username!="") {
-    // alert("Tôi nhớ bạn rồi " + username+" à, cookie này tồn tại trong 1 ngày");
-  } else {
-    username = prompt("Xin chào bạn đã xâm nhập vào web tôi, xin để lại quý danh:", "Nhập tên");
-    alert("reload trang để thấy điều kì diệu.")
-    if (username != "" && username != null) {
-        setCookie("username", username, 1);
-    }
-  }
   
   if(product_1_amount_C!=0){
     for(let i = 0; i< product_1_amount_C;i++){
